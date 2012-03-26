@@ -10,8 +10,8 @@ to generate a PDF of the resume source LaTeX file in the same directory.
 The resultant resume.pdf will be placed in the /cooked directory.
 
 The LaTeX environment this has been tested with is the TexLive distribution
-supplied with Ubuntu 11.10. The following packages are probably needed
-to get the LaTeX to generate with fault:
+supplied with Ubuntu 11.10. An unknown subset of the following packages are 
+needed to get the LaTeX to generate a PDF without incident:
 
 TexLive: Essential programs and files
 TexLive: LaTeX Basic Packages
