@@ -1,3 +1,12 @@
+#!/usr/bin/perl
+
+# cookDocument.pl
+# Author: Lindsay Bradford, 2012
+#
+# A perl script that creates a DVI or PDF file of the LaTeX source
+# specified by $documentBase. A $scope command-line variable will specify
+# whether to create a DVI file, a PDF file, or both a DVI and PDF file.
+
 $documentBase = $ARGV[0];
 $scope        = $ARGV[1];
 
