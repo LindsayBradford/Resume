@@ -157,7 +157,7 @@
 %-----------------------------------------------------------------------------%
 
 \newenvironment{Skills}
-  {\ResumeHeader{PROFESIONAL SKILLS}
+  {\ResumeHeader{PROFESSIONAL SKILLS}
     \begin{center}
     \begin{itemize}}
   { \end{itemize}
