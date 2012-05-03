@@ -1,8 +1,10 @@
 A simple LaTeX resume generation environemnt, based on Perl scripts.
 --------------------------------------------------------------------
 
-Author: Lindsay Bradford (http://lindsaybradford.wordpress.com/)
+Author: Lindsay Bradford <http://lindsaybradford.wordpress.com/>
 
+Here's a recent example of the kind of PDF it produces: 
+<http://lindsaybradford.files.wordpress.com/2012/05/resume.pdf>
 
 With /raw as the working directory, run the CookPDF.pl perl script 
 to generate a PDF of the resume source LaTeX file in the same directory.
