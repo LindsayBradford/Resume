@@ -15,10 +15,10 @@ The LaTeX environment this has been tested with is the TexLive distribution
 supplied with Ubuntu 11.10. An unknown subset of the following packages are 
 needed to get the LaTeX to generate a PDF without incident:
 
-TexLive: Essential programs and files
-TexLive: LaTeX Basic Packages
-TexLive: LaTeX Recommended Packages
-TexLive: LaTeX Supplementary Packages
-TexLive: LaTeX Auxiliary Packages
-TexLive: MetaPost (and MetaFont) Drawing Packages
-TexLive: Extra Fonts
++ TexLive: Essential programs and files
++ TexLive: LaTeX Basic Packages
++ TexLive: LaTeX Recommended Packages
++ TexLive: LaTeX Supplementary Packages
++ TexLive: LaTeX Auxiliary Packages
++ TexLive: MetaPost (and MetaFont) Drawing Packages
++ TexLive: Extra Fonts
