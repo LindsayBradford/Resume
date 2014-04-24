@@ -1,0 +1,56 @@
+apply plugin: 'groovy'
+
+defaultTasks 'full'
+
+ext {
+ documentBase = 'resume'
+}
+
+project.ext {
+  latexFile = ext.documentBase + '.tex'
+  pdfFile = ext.documentBase + '.pdf'
+  rawDirectory = 'raw'
+  cookedDirectory = 'cooked'
+}
+
+task cook(type: Exec) {
+  doFirst {
+    println "Cooking $project.latexFile in /$project.rawDirectory."
+  }
+  outputs.upToDateWhen{false}
+  workingDir project.rawDirectory 
+  standardOutput = new ByteArrayOutputStream()
+  2.times {
+    commandLine 'pdflatex', project.documentBase
+  }
+
+  outputs.file file("$project.rawDirectory/$project.pdfFile")
+  doLast {
+    println "Cooked $project.latexFile to $project.pdfFile."
+  }
+}
+
+task deliver(type: Copy) {
+  dependsOn cook
+  outputs.upToDateWhen{false}
+  from cook
+  into project.cookedDirectory
+  doLast {
+    println "Delivered $project.pdfFile to /$project.cookedDirectory."
+  }
+}
+
+task flush(type: Delete) {
+  dependsOn deliver
+  outputs.upToDateWhen{false}
+  delete {
+    fileTree(dir: project.rawDirectory, includes: ['**/*.aux', '**/*.log', '**/*.tmp', '**/*.pdf', '**/*.toc', '**/*.out'])
+  } 
+  doLast {
+    println "Flushed /$project.rawDirectory of temporary $documentBase files."
+  }
+}
+
+task full {
+  dependsOn flush
+}

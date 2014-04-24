@@ -1,14 +1,18 @@
-A simple LaTeX/Perl PDF resume generation project.
+A simple LaTeX PDF resume generation script in Gradle.
 --------------------------------------------------------------------
 
 Author: [Lindsay Bradford](http://lindsaybradford.wordpress.com/)
 
 Here's a [recent example](https://googledrive.com/host/0B7T5Ops6C7WQV1BMdXpXQ1ZMNHc/resume.pdf) of the kind of PDF it produces.
 
-With /raw as the working directory, run the CookPDF.pl perl script 
-to generate a PDF of the resume source in the same directory.
-
+From the root directory, simply run gradle.
 The resultant resume.pdf will be placed in the /cooked directory.
+
+Following tasks have been defined:
+* cook      Generates the resume.pdf file.
+* deliver   Delivers it to the cooked directory.
+* flush     Deletes all the temporary files.
+* full      (default) Generates, delivers, and flushes. 
 - - -
 
 The LaTeX environment this has been tested with is the TexLive distribution
