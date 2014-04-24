@@ -1,15 +1,15 @@
 A simple LaTeX resume generation environemnt, based on Perl scripts.
 --------------------------------------------------------------------
 
-Author: Lindsay Bradford <http://lindsaybradford.wordpress.com/>
+Author: [Lindsay Bradford](http://lindsaybradford.wordpress.com/)
 
-Here's a recent example of the kind of PDF it produces: 
-<http://lindsaybradford.files.wordpress.com/2012/05/resume.pdf>
+Here's a [recent example](https://googledrive.com/host/0B7T5Ops6C7WQV1BMdXpXQ1ZMNHc/resume.pdf) of the kind of PDF it produces.
 
 With /raw as the working directory, run the CookPDF.pl perl script 
 to generate a PDF of the resume source LaTeX file in the same directory.
 
 The resultant resume.pdf will be placed in the /cooked directory.
+- - -
 
 The LaTeX environment this has been tested with is the TexLive distribution
 supplied with Ubuntu 11.10. An unknown subset of the following packages are 
