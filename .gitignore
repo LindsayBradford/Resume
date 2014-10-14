@@ -1,2 +1,3 @@
 .gradle/
 cooked/resume.pdf
+*.tex~
