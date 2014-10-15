@@ -9,18 +9,28 @@ project.ext {
   cookedDirectory = 'cooked'
 }
 
-task cook(type: Exec) {
-  doFirst {
-    println "Cooking $project.latexFile in /$project.rawDirectory."
-  }
-
+task pdflatex1(type: Exec) {
   outputs.upToDateWhen{false}
   workingDir project.rawDirectory 
   standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
 
-  2.times {
-    commandLine 'pdflatex', project.documentBase
+  commandLine 'pdflatex', project.documentBase
+}
+
+task pdflatex2(type: Exec) {
+  outputs.upToDateWhen{false}
+  workingDir project.rawDirectory 
+  standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
+
+  commandLine 'pdflatex', project.documentBase
+}
+
+task cook() {
+  dependsOn pdflatex1, pdflatex2
+  doFirst {
+    println "Cooking $project.latexFile in /$project.rawDirectory."
   }
+
 
   outputs.file file("$project.rawDirectory/$project.pdfFile")
 
