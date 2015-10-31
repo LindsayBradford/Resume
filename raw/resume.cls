@@ -168,8 +168,8 @@
   \begin{itemize} {#2} \end{itemize}
 }
 
-\newcommand{\Skill}[2]{
-  \item {\bfseries #1}: #2 years. 
+\newcommand{\Skill}[1]{
+  \item {\bfseries #1}. 
 }
 
 \newenvironment{HobbyItems}
