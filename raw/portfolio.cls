@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \usepackage{ifthen}
-\usepackage{fancybox}
+%\usepackage{fancybox}
+\usepackage{xcolor}
+\usepackage{framed}
 \usepackage[OT1]{fontenc}
 \usepackage{pbsi}
 \ProvidesClass{portfolio}[2016/02/24 1.0 (c) Lindsay Bradford]
@@ -170,6 +172,10 @@
   {\bf Further Information:} #1 \\
 }
 
-\newcommand{\bubble}[1]{
+\newcommand{\bubblefb}[1]{
  \Ovalbox{\bf #1}
+}
+
+\newcommand{\bubble}[1]{
+ \fcolorBox{black}{lightgray}{\parbox{\textwidth}{\bf #1}}
 }
