@@ -1,8 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
 \usepackage{ifthen}
-%\usepackage{fancybox}
-\usepackage{xcolor}
-\usepackage{framed}
 \usepackage[OT1]{fontenc}
 \usepackage{pbsi}
 \ProvidesClass{portfolio}[2016/02/24 1.0 (c) Lindsay Bradford]
@@ -21,6 +18,7 @@
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage{url,supertabular,epsfig,rotating,pslatex}
 \RequirePackage{lastpage}
+\RequirePackage{fancybox}
 \RequirePackage[colorlinks=true,pdfpagemode=UseThumbs,pdfstartview=FitV,pdfpagelayout=SinglePage,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
 \usepackage[OT1]{fontenc}
@@ -135,47 +133,50 @@
 \newenvironment{Projects}{}{}
 
 \newenvironment{Project}[1]
-  { \ProjectTitle{#1} }
-  { \pagebreakForcedFill }
+  { \pagebreakForcedFill 
+    \setlength{\parskip}{1em}
+    \setlength{\parindent}{0em}
+    \ProjectTitle{#1} }
+  { \vfillForced }
 
 \newenvironment{ProjectOverview}
-{}
-{ 
-
-}
+{\begin{flushleft}{\bf Overview:}}
+{\end{flushleft}}
 
 %-----------------------------------------------------------------------------%
 % Supply \PortfolioTitle{<Title Text>} command.                               %
 %-----------------------------------------------------------------------------%
 
 \newcommand{\ProjectTitle}[1]{
-  \begin{center}
-    \begin{tabular}{c}
-      {\Large \headerfont{\bf #1}}  \\
-    \end{tabular}
-  \end{center}
+  \center{\section*{#1}}
+  \addcontentsline{toc}{section}{#1}
 }
 
 \newcommand{\ProjectTools}[1]{
-  {\bf #1 } \\
+  {\bf #1 } 
+
 }
 
 \newcommand{\ProjectTimeline}[1]{
-  {\bf Timeline:} #1 \\
+  {\bf Timeline:} #1
+
 }
 
 \newcommand{\ProjectContribution}[1]{
-  {\bf Contribution:} #1 \\
+  {\bf Contribution:} #1 
+
 }
 
 \newcommand{\ProjectFurtherInfo}[1]{
-  {\bf Further Information:} #1 \\
+  {\bf Further Information:} #1
+ 
 }
 
-\newcommand{\bubblefb}[1]{
- \Ovalbox{\bf #1}
+\newcommand{\ProjectImage}[2]{
+  \begin{center}
+    \includegraphics[{#1}]{#2}
+  \end{center}
+
 }
 
-\newcommand{\bubble}[1]{
- \fcolorBox{black}{lightgray}{\parbox{\textwidth}{\bf #1}}
-}
+\newcommand{\tool}[1]{\shadowbox{\strut #1}}

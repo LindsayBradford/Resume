@@ -101,7 +101,7 @@ task flush(type: Delete) {
   outputs.upToDateWhen{false}
 
   delete {
-    fileTree(dir: project.rawDirectory, excludes: ['**/*.tex', '**/*.cls'])
+    fileTree(dir: project.rawDirectory, excludes: ['**/*.tex', '**/*.cls', 'portfolioImages/*.*'])
   } 
 
   doLast {

@@ -1,4 +1,5 @@
 \documentclass{portfolio}
+\graphicspath{{portfolioImages/}}
 \begin{document}
 
   \vfillForced
@@ -14,19 +15,65 @@
   
   \vfillForced
 
-  % TODO: Table of contents?
+  \tableofcontents 
+
+  \vfillForced
   
   \begin{Projects}
     \begin{Project}{PersonalFinancier}
-      \ProjectTools{\bubble{Java}, Gradle, JUnit, Mockito, json-io, Legion of the Bouncy Castle (encryption), GRAL (charting)} 
+      \ProjectTools{\tool{Java} \tool{Gradle} \tool{JUnit} \tool{Mockito} \tool{json-io} \tool{Legion of the Bouncy Castle} \tool{GRAL}} 
       \ProjectTimeline{April 2014 -- Current}
-      \ProjectContribution{Solo Designer, Developer}
+      \ProjectContribution{Sole Developer}
       \begin{ProjectOverview}
         A budgetting and financial forecasting tool built to suit my way of managing household finances.
         Supports cash-flow analysis across accounts and budget categories, an inflation calculator to compare
-        the changing value of money over time, and budget file encryption via AES-256. 
+        the changing value of money over time, full undo/redo behaviour coverage and budget file encryption via AES-256. 
+
+        The final deployable artifact is a single file, fusing the core behaviour with its support libraries via an innovative usage of 
+        Gradle. The 3rd-party encryption library is an exception to this rule, and may be optionally placed in the same directory as the 
+        base artifact to enable file encryption behaviour.
       \end{ProjectOverview}
-      \ProjectFurtherInfo{Sourcecode is avaiable via \href{https://github.com/LindsayBradford/PersonalFinancier}{GitHub}.}
+      \ProjectImage{width=\textwidth}{PersonalFinancier001}
+      \ProjectFurtherInfo{Source-code is available via \href{https://github.com/LindsayBradford/PersonalFinancier}{GitHub}.}
+    \end{Project}
+    \begin{Project}{Murrumbidgee Wetlands Relational Database Tools (MWRDTools)}
+      \ProjectTools{\tool{C\#} \tool{ESRI ArcMap} \tool{ESRI ArcCatalog} \tool{SQLServer Lite}}
+      \ProjectTimeline{September 2013 -- February 2014}
+      \ProjectContribution{Project Manager, Sole Designer and Developer.}
+      \begin{ProjectOverview}
+        MWRDTools is an Esri 'ArcMap for Desktop' addon that supplies a suite of decision-support functions for the Murrumbidgee Wetlands Relational Database (MWRD).
+        It is a complete re-design and re-write of a tool commissioned for the Murrumbidgge Catchment Management Authority, allowing it to migrate to alternate user-interface
+        technologies, and to replace the existing single-user spatial database with alternatives that support multi-user behaviour.
+      \end{ProjectOverview}
+      \ProjectImage{width=0.8\textwidth}{MWRDTools001}
+      \ProjectImage{width=0.55\textwidth}{MWRDTools002}
+      \ProjectFurtherInfo{Source-code is available via \href{https://github.com/LindsayBradford/MWRDTools}{GitHub}.}
+    \end{Project}
+    \begin{Project}{Murrumbidgee Wetland Condition Indicator Tool (MWCIT)}
+      \ProjectTools{\tool{VB.NET} \tool{InnoScriptStudio} \tool{NUnit} \tool{NSubstitute}}
+      \ProjectTimeline{September 2013 -- February 2014}
+      \ProjectContribution{Project Manager, Sole Designer and Developer.}
+      \begin{ProjectOverview}
+        MWCIT s a tool commissioned by the Murrumbidgge Catchment Management Authority, allowing the user-configurable loose integration
+        of a number of natural resource management tools and datasets into a single desktop launcher application. 
+        The application has a layered architecture, implements the Model-View-Presenter (MVP) design pattern, and deploys as a stand-alone 
+        executable thanks to the innovative embedding of support assemblies within the bootstrap assembly. 
+      \end{ProjectOverview}
+      \ProjectImage{width=0.4\textwidth}{MWCIT001}
+      \ProjectImage{width=\textwidth}{MWCIT002}
+      \ProjectFurtherInfo{Source-code is available via \href{https://github.com/LindsayBradford/MWCIT}{GitHub}.}
+    \end{Project}
+    \begin{Project}{Murray Darling Basin Authority Environmental Prioritisation Tool (MDBEAP)}
+      \ProjectTools{\tool{Object Pascal} \tool{C} \tool{InnoSetupStudio} \tool{Marxan} \tool{Zonae Cogito} \tool{MapWinGIS}}
+      \ProjectTimeline{April 2015 -- November 2015}
+      \ProjectContribution{Spatial Database Designer and Developer.}
+      \begin{ProjectOverview}
+        MDBEAP s a tool commissioned as part of several deliverables to the Murray Darling Basin Authority (MDBA).  It, and it's companion tool MarxanHO
+        represent a modification of the popular environmental prioritisation tool Marxan, and it's Desktop interface, Zonae Cogito to allow for a 
+        prioritisation approach to conservation planning adapted to suit MDBA desires.  
+      \end{ProjectOverview}
+      \ProjectImage{width=\textwidth}{MDBEAP001}
+      \ProjectFurtherInfo{MDEAP and MarxanHO source-code available via \href{https://github.com/LindsayBradford/MDBEAP}{GitHub}.}
     \end{Project}
   \end{Projects}
   \vfillForced
