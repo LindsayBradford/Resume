@@ -1,57 +1,103 @@
 defaultTasks 'full'
 
-ext { documentBase = 'resume' }
+ext { 
+  resumeBase = 'resume' 
+  portfolioBase = 'portfolio' 
+}
 
 project.ext {
-  latexFile = documentBase + '.tex'
-  pdfFile = documentBase + '.pdf'
   rawDirectory = 'raw'
   cookedDirectory = 'cooked'
+
+  resumeLatexFile = resumeBase + '.tex'
+  resumePdfFile = resumeBase + '.pdf'
+
+  portfolioLatexFile = portfolioBase + '.tex'
+  portfolioPdfFile = portfolioBase + '.pdf'
 }
 
-task pdflatex1(type: Exec) {
+task pdflatexResume1(type: Exec) {
   outputs.upToDateWhen{false}
   workingDir project.rawDirectory 
   standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
 
-  commandLine 'pdflatex', project.documentBase
+  commandLine 'pdflatex', project.resumeBase
 }
 
-task pdflatex2(type: Exec) {
+task pdflatexResume2(type: Exec) {
   outputs.upToDateWhen{false}
   workingDir project.rawDirectory 
   standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
 
-  commandLine 'pdflatex', project.documentBase
+  commandLine 'pdflatex', project.resumeBase
 }
 
-task cook() {
-  dependsOn pdflatex1, pdflatex2
+task cookResume() {
+  dependsOn pdflatexResume1, pdflatexResume2
   doFirst {
-    println "Cooking $project.latexFile in /$project.rawDirectory."
+    println "Cooking $project.resumeLatexFile in /$project.rawDirectory."
   }
 
-
-  outputs.file file("$project.rawDirectory/$project.pdfFile")
+  outputs.file file("$project.rawDirectory/$project.resumePdfFile")
 
   doLast {
-    println "Cooked $project.latexFile to $project.pdfFile."
+    println "Cooked $project.resumeLatexFile to $project.resumePdfFile."
   }
 }
 
-task deliver(type: Copy) {
+task pdflatexPortfolio1(type: Exec) {
+  outputs.upToDateWhen{false}
+  workingDir project.rawDirectory 
+  standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
+
+  commandLine 'pdflatex', project.portfolioBase
+}
+
+task pdflatexPortfolio2(type: Exec) {
+  outputs.upToDateWhen{false}
+  workingDir project.rawDirectory 
+  standardOutput = new ByteArrayOutputStream() // stops output to STDOUT
+
+  commandLine 'pdflatex', project.portfolioBase
+}
+
+task cookPortfolio() {
+  dependsOn pdflatexPortfolio1, pdflatexPortfolio2
+  doFirst {
+    println "Cooking $project.portfolioLatexFile in /$project.rawDirectory."
+  }
+
+  outputs.file file("$project.rawDirectory/$project.portfolioPdfFile")
+
+  doLast {
+    println "Cooked $project.portfolioLatexFile to $project.portfolioPdfFile."
+  }
+}
+
+task deliverResume(type: Copy) {
   outputs.upToDateWhen{false}
 
-  from cook
+  from cookResume
   into project.cookedDirectory
 
   doLast {
-    println "Delivered $project.pdfFile to /$project.cookedDirectory."
+    println "Delivered $project.resumePdfFile to /$project.cookedDirectory."
+  }
+}
+
+task deliverPortfolio(type: Copy) {
+  outputs.upToDateWhen{false}
+
+  from cookPortfolio
+  into project.cookedDirectory
+
+  doLast {
+    println "Delivered $project.portfolioPdfFile to /$project.cookedDirectory."
   }
 }
 
 task flush(type: Delete) {
-  dependsOn deliver
+  dependsOn deliverResume, deliverPortfolio
   outputs.upToDateWhen{false}
 
   delete {
@@ -59,7 +105,7 @@ task flush(type: Delete) {
   } 
 
   doLast {
-    println "Flushed /$project.rawDirectory of temporary $documentBase files."
+    println "Flushed /$project.rawDirectory of temporary $resumeBase and $portfolioBase files."
   }
 }
 
