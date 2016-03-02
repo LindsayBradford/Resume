@@ -5,12 +5,12 @@
   \vfillForced
 
   \PortfolioTitle{Lindsay William Bradford}
-  
+ 
   \vfillForced
   
   \begin{ContactDetails}
-    \ContactDetail{Mobile Phone}{+61 423 989 511}   
-    \ContactDetail{Email}{\href{mailto:lindsay.w.bradford@gmail.com}{lindsay.w.bradford@gmail.com}}   
+    \ContactDetail{Mobile Phone}{+61 423 989 511}
+    \ContactDetail{Email}{\href{mailto:lindsay.w.bradford@gmail.com}{lindsay.w.bradford@gmail.com}}
   \end{ContactDetails}
   
   \vfillForced
@@ -20,8 +20,23 @@
   \vfillForced
   
   \begin{Projects}
+    \begin{Project}{YAWLEditor}
+      \ProjectTools{\tool{Java} \tool{Swing} \tool{JGraph} \tool{XML} \tool{XMLSchema} \tool{SAX}} 
+      \ProjectTimeline{Sept 2003 -- Mar 2008}
+      \ProjectContribution{Sole Designer and Principal Developer, up to and including release 2.0}
+      \begin{ProjectOverview}
+        YAWL is an open source Workflow/BPM system based on a concise and powerful modelling language jointly developed by QUT's BPM research group in 
+        collaboration with Eindhoven University of Technology.  YAWL builds on the insights gained from their research into workflow patterns and 
+        combines it with the powerful concurrency language of Petri-nets.  
+
+        I was the principal author of the YAWLEditor (a graphing tool, capable of defining valid specifications to run within the YAWL engine) from its inception to 
+        release 2.0 of the YAWLEditor. 
+      \end{ProjectOverview}
+      \ProjectImage{width=0.8\textwidth}{YAWLEditor001}
+      \ProjectFurtherInfo{Source-code is available via \href{https://sourceforge.net/projects/yawl/}{Sourceforge}.\\A technical manual, discussing the design of the YALEditor is available upon request.}
+    \end{Project}
     \begin{Project}{PersonalFinancier}
-      \ProjectTools{\tool{Java} \tool{Gradle} \tool{JUnit} \tool{Mockito} \tool{json-io} \tool{Legion of the Bouncy Castle} \tool{GRAL}} 
+      \ProjectTools{\tool{Java} \tool{Swing} \tool{Gradle} \tool{JUnit} \tool{Mockito} \tool{json-io} \tool{Legion of the Bouncy Castle} \tool{GRAL}} 
       \ProjectTimeline{April 2014 -- Current}
       \ProjectContribution{Sole Developer}
       \begin{ProjectOverview}
@@ -36,13 +51,32 @@
       \ProjectImage{width=\textwidth}{PersonalFinancier001}
       \ProjectFurtherInfo{Source-code is available via \href{https://github.com/LindsayBradford/PersonalFinancier}{GitHub}.}
     \end{Project}
+    \begin{Project}{Various Personal Java Desktop Utilities}
+      \ProjectTools{\tool{Java} \tool{Swing}}
+      \ProjectTimeline{Ongoing}
+      \ProjectContribution{Sole Developer.}
+      \begin{ProjectOverview}
+        Given that Java and Swing produce a rich desktop GUI interface, I've developed a number of personal tools in my spare time over the years to allow me to 
+        explore various aspects of the language whilst delivering utility regardless of my operating system. Below is a list of the utilities constructed:
+        \begin{itemize}
+           \item The Compounder - A utility for calculating compound interest, and comparing alternate compounding scenarios.
+           \item CPI Calculator - For comparing how the value of money changes over time, functionality folded into my PersonalFinancier tool.
+           \item Share Trading Calculator - For calculating finacial risk, and benchmarking returns against cash. 
+           \item Dividend Calculator - For calculating divident returns on Australian shares.
+           \item Stopwatch - An excuse to lean about Java's threading model, and a convenient desktop timer.
+           \item Shadowrun Dice Roller - For a roleplaying game needing a large number of dice.
+        \end{itemize}
+      \end{ProjectOverview}
+      \ProjectImage{width=\textwidth}{JavaUtilities}
+      \ProjectFurtherInfo{Demonstrations and/or browsing of source is available upon request.}
+    \end{Project}
     \begin{Project}{Murrumbidgee Wetlands Relational Database Tools (MWRDTools)}
       \ProjectTools{\tool{C\#} \tool{ESRI ArcMap} \tool{ESRI ArcCatalog} \tool{SQLServer Lite}}
       \ProjectTimeline{September 2013 -- February 2014}
       \ProjectContribution{Project Manager, Sole Designer and Developer.}
       \begin{ProjectOverview}
-        MWRDTools is an Esri 'ArcMap for Desktop' addon that supplies a suite of decision-support functions for the Murrumbidgee Wetlands Relational Database (MWRD).
-        It is a complete re-design and re-write of a tool commissioned for the Murrumbidgge Catchment Management Authority, allowing it to migrate to alternate user-interface
+        MWRDTools is an Esri `ArcMap for Desktop' addon that supplies a suite of decision-support functions for the Murrumbidgee Wetlands Relational Database (MWRD).
+        It is a complete re-design and re-write of a tool commissioned for the Murrumbidgee Catchment Management Authority, allowing it to migrate to alternate user-interface
         technologies, and to replace the existing single-user spatial database with alternatives that support multi-user behaviour.
       \end{ProjectOverview}
       \ProjectImage{width=0.8\textwidth}{MWRDTools001}
@@ -64,9 +98,9 @@
       \ProjectFurtherInfo{Source-code is available via \href{https://github.com/LindsayBradford/MWCIT}{GitHub}.}
     \end{Project}
     \begin{Project}{Murray Darling Basin Authority Environmental Prioritisation Tool (MDBEAP)}
-      \ProjectTools{\tool{Object Pascal} \tool{C} \tool{InnoSetupStudio} \tool{Marxan} \tool{Zonae Cogito} \tool{MapWinGIS}}
+      \ProjectTools{\tool{Object-Pascal} \tool{C} \tool{InnoSetupStudio} \tool{Marxan} \tool{Zonae Cogito} \tool{MapWinGIS}}
       \ProjectTimeline{April 2015 -- November 2015}
-      \ProjectContribution{Spatial Database Designer and Developer.}
+      \ProjectContribution{Sole Spatial Database Designer and Developer.}
       \begin{ProjectOverview}
         MDBEAP s a tool commissioned as part of several deliverables to the Murray Darling Basin Authority (MDBA).  It, and it's companion tool MarxanHO
         represent a modification of the popular environmental prioritisation tool Marxan, and it's Desktop interface, Zonae Cogito to allow for a 

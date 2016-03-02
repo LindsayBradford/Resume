@@ -27,7 +27,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{gfsdidot}
-
+\renewcommand{\contentsname}{Selected Software Projects:}
 %-----------------------------------------------------------------------------%
 % Make titlepage environment use current pagestyle.                           %
 %-----------------------------------------------------------------------------%
