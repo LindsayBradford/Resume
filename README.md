@@ -3,7 +3,7 @@ A simple LaTeX PDF resume generation script in Gradle.
 
 Author: [Lindsay Bradford](http://lindsaybradford.wordpress.com/)
 
-Here's a [recent example](https://googledrive.com/host/0B7T5Ops6C7WQV1BMdXpXQ1ZMNHc/resume.pdf) of the kind of PDF it produces.
+Here's a [recent example](https://drive.google.com/open?id=0B7T5Ops6C7WQWXRPUGc2RUF4aGc) of the kind of PDF it produces.
 
 From the root directory, simply run gradle.
 The resultant resume.pdf will be placed in the /cooked directory.
