@@ -1,61 +1,191 @@
-\pagebreak
+\documentclass{resume}
+\begin{document}
 
-\vfillForced
+  \vfillForced
 
-\ResumeHeader{REFEREES}
+  \ResumeTitle{Lindsay William Bradford}
+  
+  \vfillForced
+  
+  \begin{ContactDetails}
+%    \ContactDetail{Availability}{November 2015}   
+    \ContactDetail{Mobile Phone}{+61 423 989 511}   
+    \ContactDetail{Email}{\href{mailto:lindsay.w.bradford@gmail.com}{lindsay.w.bradford@gmail.com}}   
+  \end{ContactDetails}
+  
+  \vfillForced
 
-\vspace*{2em}
+  \begin{Profile}
+  I am a highly motivated professional with excellent communication skills and a 
+  wealth of software analysis, design and construction experience. I've coded back-end servers,
+  decision support systems, optimisation models and rich GUI desktop applications across domains 
+  as diverse as stockbroking, rail control, environmental simulations and isotope analysis. 
+  \end{Profile}
 
-\hfillForced%
-\begin{minipage}{0.333\textwidth}
-  \begin{RefereeSection}
-    \RefereeName{Dr Tore Fjellheim}
-    \RefereeTitle{Solutions Architect}
-    \RefereeWorkplace{Mastercard}
-%    \RefereePhone{0402 606 606}
-    % \RefereePhone{617 3379 6805} % (home)
-    \RefereeMobile{0402 606 606}
-    \RefereeEmail{Tore.Fjellheim@mastercard.com}
-  \end{RefereeSection}
-\end{minipage}\hfillForced
-\begin{minipage}{0.3\textwidth}
-  \begin{RefereeSection}
-    \RefereeName{Mr Mike Taylor}
-    \RefereeTitle{Head of Signalling}
-    \RefereeWorkplace{SNC Lavalin Rail \& Transit}
-    \RefereePhone{0414 653 469}
-    \RefereeEmail{mike.ian.taylor@gmail.com}
-  \end{RefereeSection}
-\end{minipage}\hfillForced
+  \vfillForced
 
-\vspace*{2em}
+  \begin{Skills}
+    \SkillSection{Technical Skills}{
+      \Skill{Application/Architecture Analysis \& Design}
+      \Skill{Unified Modelling Language (UML), Enterprise Architect}
+      \Skill{Business Process Modelling (YAWL, EPC, BPMN)}
+      \Skill{Requirements Analysis}
+    }
+    \SkillSection{Programming Languages}{
+      \Skill{\href{https://github.com/LindsayBradford/PersonalFinancier}{Java} / Eclipse}
+      \Skill{\href{https://github.com/LindsayBradford/MWRDTools}{C\#} / \href{https://github.com/LindsayBradford/MWCIT}{VB.NET} / Visual Studio}
+      \Skill{\href{https://github.com/LindsayBradford/GoEuler}{Go[lang]}, Perl, Python}
+    }
+    \SkillSection{Other Relevant Skills}{
+      \Skill{GIT / Subversion}
+      \Skill{XML, SQL}
+      \Skill{ArcGIS, MapWinGIS}
+    }
+  \end{Skills}
 
-\hfillForced%
-\begin{minipage}{0.333\textwidth}
-  \begin{RefereeSection}
-    \RefereeName{Dr Stephen Milliner}
-    \RefereeTitle{ex-Lecturer and Principal PhD Supervisor}
-    \RefereeWorkplace{School of Information Systems\\Queensland University of Technology}
-    \RefereePhone{0413 025 891}
-    \RefereeEmail{swmilliner@hotmail.com}
-  \end{RefereeSection}
-\end{minipage}\hfillForced
-\begin{minipage}{0.333\textwidth}
-  \begin{RefereeSection}
-    \RefereeName{Prof. Arthur ter Hofstede}
-    \RefereeTitle{Professor, Faculty of Science and Technology}
-    \RefereeWorkplace{Queensland University of Technology}
-    \RefereePhone{617 3138 9474}
-    \RefereeEmail{arthur@yawlfoundation.org}
-  \end{RefereeSection}
-\end{minipage}\hfillForced%
-%\begin{minipage}{0.333\textwidth}
-%  \begin{RefereeSection}
-%    \RefereeName{Ms Danqing Zang}
-%    \RefereeTitle{Manager -- Information Technology Services}
-%    \RefereeWorkplace{Institute of Health and Biomedical Innovation\\Queensland University of Technology}
-%    \RefereePhone{617 3138 6104}
-%    \RefereeEmail{d.zhang@qut.edu.au}
-%  \end{RefereeSection}
-%\end{minipage}\hfillForced%
-\vfillForced
+  \vfillForced
+
+  \begin{Achievements}
+   \Achievement{Proved via empirical analysis the viability of a prototype Web 
+         Application Server capable of accepting and incorporating nearly 
+         unrestricted software changes at runtime, and under extreme load. 
+         This resulted in a published PhD thesis, three peer-reviewed articles, 
+         two instances of national media coverage, and one patent.}
+    \Achievement{Original author of the YAWLEditor, a workflow editor, allowing users 
+          to quickly draw, validate and analyse YAWL workflow definitions. 
+          Contributed to efforts showing that executable business processes could 
+          be successfully applied to the highly creative domain of Film and Television.}
+    \Achievement{Over a 7.5 year period, contributed in a number of increasingly 
+          more senior roles to taking market share of the Shares Settlement 
+          System from a handful of Brisbane Stockbrokers to over half of the 
+          60-odd Australian Stockbroker community.}
+  \end{Achievements}
+
+  \pagebreakForcedFill
+
+  \ResumeHeader{WORK HISTORY}
+  \begin{WorkHistory}
+      \CareerDetailItem{Senior Software Engineer (Contract)}{Australian Rivers Institute}{June 2018 -- Current}{
+      \item Construction of River Catchment Resilience optimisation framework and web server.
+      \item Implemented single and multi-objective simulated annealing optimisation algorithms.
+      \item Delivery of programming and simulated annealing workshops. 
+    }
+    \CareerDetailItem{Consultant}{Mastercard}{Apr 2016 -- June 2018 }{
+%      \item Implemented performance tests via the Scala \href{https://gatling.io/}{Gatling} framework. 
+      \item Worked with team members to introduce PCI \href{https://en.wikipedia.org/wiki/Payment\_Card\_Industry\_Data\_Security\_Standard\#Self-Assessment\_Questionnaire\_(SAQ)}{SAQ-A} support to the application-base.
+      \item Implemented with team members, an Amex rewards service. Was solely responsible for the design of the emulator of the Amex communications interface.
+      \item Implemented a \href{https://en.wikipedia.org/wiki/Security\_Assertion\_Markup\_Language}{SAML} Single-sign-on emulator in our test environment to unblock our project.
+      \item Worked with a team-member to achieve an order-of-magnitude increase in performance of \href{https://www.elastic.co/products/elasticsearch}{ElasticSearch} in production environments. 
+    }
+    \CareerDetailItem{Senior Software Engineer (Contract)}{Australian Rivers Institute}{Sep 2010 -- Jan 2016}{
+      \item 13 contract extensions over period of employment.
+      \item {\bfseries Software architecture} analysis for \href{http://track.org.au/publications/registry/track956}{Management Strategy Evaluation} (MSE) 
+            platform.{\bfseries VB.NET Programming:} multiple GUI \& infrastructure enhancements to MSE.
+      %\item Conversion of {\bfseries C\#} ArcMap plugin \href{https://github.com/LindsayBradford/MWRDTools}{MWRDTools} from 9.3 to ArcMap 10.0. Multiple enhancements, fusing several spatial datasets into one.
+      \item Construction and Open-Source release of integration tool for natural resource managements tools and datasets called \href{https://github.com/LindsayBradford/MWCIT}{MWCIT}. 
+      \item {\bfseries} Multiple Species Benefit Wetland Optimisations via Simulated Annealing in {\bfseries VB.NET}.
+      \item Construction of \href{http://www.uq.edu.au/marxan/}{Marxan} data conversion/summary tools, and Marxan extension \href{https://github.com/LindsayBradford/MarxanHO}{MarxanHO} using {\bfseries Go[lang]} and {\bfseries C}. 
+      \item Construction of isotope sampling analysis tool in Excel VB, reducing user workflow times from hours to minutes.
+      \item Usage of \href{http://www.esri.com/software/arcgis/}{ArcGIS}, \href{http://mapwingis.codeplex.com/}{MapWinGIS}, \href{http://www.syncfusion.com/}{Syncfusion}, \href{http://www.centerspace.net/products/c-sharp-vb-net-math-library-products/}{NMath}, and \href{http://www.r-project.org/}{R-language} tools.
+    }
+    \CareerDetailItem{R\&D Systems Engineer}{Invensys Rail}{Mar 2008 -- Jun 2010}{
+      \item {\bfseries Requirements analysis and design} for ERTMS Level 2 demonstrator software and Singapore DTL \href{http://en.wikipedia.org/wiki/Centralized\_traffic\_control}{CTC Software}.
+      \item {\bfseries Training preparation \& delivery} for company failover/communications framework.
+    }
+  \end{WorkHistory}
+  \begin{WorkHistory}
+    \CareerDetailItem{Senior Research Associate}{Queensland University of Technology}{Mar 2006 -- Mar 2008}{
+      \item Collaborated with \href{http://cci.edu.au/}{CCi} researchers and industry partners to create accurate {\bfseries business 
+            process models} of film and television production using Event Process Chains (EPCs).
+      \item Enhanced the \href{http://sourceforge.net/projects/yawl/files/YAWL\%20Editor/}{YAWLEditor} to 
+         better support users adapting business process models to {\bfseries executable workflow models}.
+    }
+    \CareerDetailItem{PhD Student}{Queensland University of Technology}{Aug 2002 -- Jun 2006}{
+      \item Proved via empirical analysis the viability of a {\bfseries Web Application Server}
+             capable of incorporating {\bfseries unrestricted programming changes} at runtime under load.
+      \item Primary author of several \hyperlink{Publications}{refereed and {\bfseries published papers}}, 
+             the last of which was the basis of an 
+             \href{http://v3.espacenet.com/textdes?DB=EPODOC\&IDX=EP1670212\&F=0\&QPN=EP1670212}{{\bfseries EU Patent}}. 
+      \item Gained {\bfseries  national exposure} in the research section of The Australian newspaper, and an interview on ABC Radio National.
+      \item  Research Assistant for the \href{http://www.yawlfoundation.org/}{YAWL} project.
+                  Primary author of an open-source {\bfseries workflow editor}
+ (the \href{http://sourceforge.net/projects/yawl/files/YAWL\%20Editor/}{YAWLEditor}), 
+                  making extensive use of the \href{http://www.jgraph.com/}{JGraph} open-source Java graphing framework.
+      \item {\bfseries Requirements Analyst} for the QUT Creative Industries Precinct.
+      \item Tutored on {\bfseries XML, XPath, DTDs, XMLSchema, XBRL, SQL} and {\bfseries Z Schema}.
+    }
+%    \CareerDetailItem{Research Programmer}{Information Designers}{Mar 2006 -- Jan 2007}{
+%      \item Constructed {\bfseries software deployment framework} and {\bfseries commercially compelling prototypes}, drawing on PhD techniques. 
+%      \item Key prototype showed how a number of components specialised in different areas, such as new feeds or calendaring, could interact to 
+%            deliver filtered RSS feeds to a calendar, or calendar information to RSS feeds.
+%      \item Used the \href{https://rome.dev.java.net/}{ROME framework} for RSS feed manipulation 
+%            and \href{http://ical4j.sourceforge.net/}{iCal4j framework} for iCalendar manipulation.
+%    }
+    \CareerDetailItem{Various Roles}{GBST Holdings}{Dec 1995 -- May 2002}{
+      \item Systems Architect and System Architecture Team Leader
+      \begin{itemize}
+      \item Ensured that GBST's software products were adequately balancing strategic future direction enhancements against existing work commitments.
+        \item Estimated and subsequently won the business for a Hong Kong adaptation of Shares, sized at 80 person-weeks and 
+            valued at $\approx$ \$2 million AUD.
+        \item Introduced a {\bfseries UML} 1.3-based object-oriented analysis and design technique. Trained architects and 20+ designers in its usage.
+        \item Ensured \href{http://gbst.com/our-expertise/capital-markets-expertise/shares}{Shares product} 
+              (circa 2002, $\approx$ 2.3 million lines of code, covering 470 database tables) 
+              was adequately balancing strategic direction against existing work. 
+        \item Introduced {\bfseries special interest groups} to 80+ programmers and 20+ designers including email groups, FAQs and how-to guides.
+      \end{itemize}
+      \item Application Support and Trading Thematic Team Leader
+      \begin{itemize}
+        \item {\bfseries Analysed requirements, designed and tested} a risk management tool for vetting orders against user-defined rules, and automatically placing `safe' orders. 
+        \item {\bfseries Redesigned} End of Day (EOD)  batch process into a phased solution, allowing the Shares product to remain 
+            {\bfseries online $24\times7$}. Module reported only {\bfseries two bugs in first six months} of operation.
+        \item Implemented Support Blitz, taking 600 support requests to 200 in a fortnight.
+      \end{itemize}
+    }
+  \end{WorkHistory}
+
+  \pagebreakForcedFill
+
+  \begin{EducationSummary}
+    \EducationItem{2002--2006}{Doctor of Philosophy}{Queensland University of Technology}
+    \EducationItem{1994}{Bachelor of Information Technology, Honours (2A)}{The University of Queensland}
+    \EducationItem{1991--1993}{Bachelor of Information Technology}{The University of Queensland}
+  \end{EducationSummary}  
+
+  \vfillForced
+
+  \begin{Publications}
+    \Publication{Cattarino, L., Hermoso, V., Bradford, L., Carwardine, J., Wilson, K., Kennard, M. J., Linke, S.:
+                 Accounting for continuous species' responses to management effort enhanses cost-effectiveness of conservation decisions.
+                 Biological Conservation 197 (2016).}
+    \Publication{Seidel, S., Rosemann, M., Ter Hofstede, A. H. M. and Bradford, L.:
+                 Developing a business process reference model for the screen business -- a design science research case study.
+                 The 17th Australasian Conference on Information Systems, Adelaide (2006).}
+    \Publication{Bradford, L., Milliner, S., Dumas, M.:  
+                 \href{http://www.springerlink.com/index/10.1007/11417019\_10}
+                 {Experience using a Coordination-based Architecture for Adaptive Web Content Provision},
+                 Proceedings of the 7th International Conference on Coordination Models and Languages, 
+                 Springer-Verlag Heidelberg (2005). Acceptance ratio: 21.6\%.}
+    \Publication{Bradford, L., Milliner, S., Dumas, M.:  
+                 \href{http://www.springerlink.com/link.asp?id=qxg07vx8xyn71cw3}{Scaling Dynamic Web Content Provision Using Elapsed-Time-Based Content Degradation}, 
+                 Proceedings of the 5th International Conference on Web Information Systems Engineering, Springer-Verlag Heidelberg (2004). Acceptance ratio: 22.7\%.}
+    \Publication{Bradford, L., Milliner, S., Dumas, M.: 
+                 \href{http://www.springerlink.com/link.asp?id=h38d8g1jlbtpufc4}{Varying Resource Consumption to Achieve Scalable Web Services}, 
+                 Proceedings of the 4th VLDB Workshop on Technologies and E-Services, Springer-Verlag Heidelberg (2003).}
+  \end{Publications}
+
+  \vfillForced
+
+  \begin{Patents}
+    \Patent{Primary author of the EU patent 
+       \href{http://v3.espacenet.com/textdes?DB=EPODOC\&IDX=EP1670212\&F=0\&QPN=EP1670212}{Adaptive software components}, 
+        granted 17/10/2007.
+    }
+  \end{Patents}
+
+  \vfillForced
+  
+  % Comment out the line below to remove the referees page from the Resume.
+
+  \input{referees}
+
+\end{document}
