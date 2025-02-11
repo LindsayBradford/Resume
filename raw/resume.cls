@@ -2,7 +2,7 @@
 \usepackage{ifthen}
 \usepackage[OT1]{fontenc}
 \usepackage{pbsi}
-\ProvidesClass{resume}[2005/11/14 1.3 (c) Lindsay Bradford]
+\ProvidesClass{resume}[2025/02/25 1.4 (c) Lindsay Bradford]
 
 %-----------------------------------------------------------------------------%
 % Revision History:                                                           %
@@ -15,7 +15,7 @@
 %                  overriding \thepage command.                               %
 %   1.2.1        - Removed colons from skill summary section                  %
 %   1.3          - Many changes to format to better suite UK contracting std  %
-%                -                                                            %
+%   1.4          - Massive overhaul to produce ATS-ready resumes              %
 %-----------------------------------------------------------------------------%
 % Use Article Style as the default.                                           %
 %-----------------------------------------------------------------------------%
@@ -27,7 +27,15 @@
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage{url,supertabular,epsfig,rotating,pslatex}
 \RequirePackage{lastpage}
-\RequirePackage[colorlinks=true,pdfpagemode=UseThumbs,pdfstartview=FitV,pdfpagelayout=SinglePage,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage[colorlinks=true,pdfpagemode=UseThumbs,pdfstartview=FitV,pdfpagelayout=SinglePage,linkcolor=blue,citecolor=bl
+ue,urlcolor=blue]{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{tabto}
+\RequirePackage{xcolor}
+\RequirePackage{framed}
+\RequirePackage[skip=0.25em plus1pt, indent=0pt]{parskip}
+
+\definecolor{shadecolor}{RGB}{200,200,200}
 
 \usepackage[OT1]{fontenc}
 \usepackage{pacioli}
@@ -35,6 +43,10 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{gfsdidot}
+
+\hyphenpenalty=9999
+
+\newcommand{\sectionSpace}{\vspace{0.5em}}
 
 %-----------------------------------------------------------------------------%
 % Make titlepage environment use current pagestyle.                           %
@@ -95,21 +107,14 @@
 \newcommand{\pagebreakForcedFill}{\vfillForced\pagebreak\vfillForced}
 
 %-----------------------------------------------------------------------------%
-% Supply \ResumeTitle[<DocumentTitle>]{<PersonName>} command.                 %
+% Supply \ResumeSumary[<DocumentTitle>]{<PersonName>} command.                 %
 %   Leaving the optional parameter <DocumentTitle> out will                   %
 %   generate the title "Curriculum Vitae"                                     %
 %-----------------------------------------------------------------------------%
 
-\newcommand{\ResumeTitle}[2][Curriculum Vitae]{
+\newcommand{\ResumeSummary}[2][Resume]{
   \renewcommand{\DH@ResumeTitle}{#1}       % set \DH@ResumeTitle  to variable 1
   \renewcommand{\DH@ResumeAuthor}{#2}      % set \DH@ResumeAuthor to variable 2
-    \begin{bfseries}
-        \begin{Huge}
-          \begin{center}
-          {\bsifamily #2}
-          \end{center}
-        \end{Huge}
-    \end{bfseries}
 }
 
 %-----------------------------------------------------------------------------%
@@ -117,39 +122,22 @@
 %   are to be used together                                                   %
 %-----------------------------------------------------------------------------%
 
+\newcommand{\fullRule}{\noindent\rule{\textwidth}{2.5pt}}
+
+\newcommand{\ResumeHeader}[1]{\fullRule\vspace{0.66em}\break{\Large{\bf #1}}\hfill\break\fullRule\vspace{0.66em}}
+
 \newenvironment{ContactDetails}
-  {\begin{center}
-     \begin{large}
-       \begin{tabular}{lcl}
-  }
-  {
-       \end{tabular}
-     \end{large}
-   \end{center}
-  }
+  {\begin{Large}
+   \ContactDetail{Name}{\DH@ResumeAuthor}}
+  {\end{Large}}
 
 \newcommand{\ContactDetail}[2]{
-  \vspace*{2.5mm}
-  {\em #1:} & & {\em #2} \\
+  {\bf #1:} \tab {\em #2} \par
 }
 
-\newenvironment{Profile}
-  {\ResumeHeader{PROFILE}}
-  {}
-
-%-----------------------------------------------------------------------------%
-% The environment Achievemens and command \Achievement                        %
-%   are to be used together                                                   %
-%-----------------------------------------------------------------------------%
-
-\newenvironment{Achievements}
-  {\ResumeHeader{ACHIEVEMENTS}
-    \begin{itemize}}
-  {\end{itemize}}
-
-\newcommand{\Achievement}[1]{
-  \item #1
-}
+\newenvironment{Summary}[1]
+  {\ResumeHeader{PROFESSIONAL SUMMARY}{#1}\begin{itemize}}
+  {\end{itemize}\sectionSpace}
 
 %-----------------------------------------------------------------------------%
 % The environment Skills and command \Skill                                   %
@@ -157,90 +145,42 @@
 %-----------------------------------------------------------------------------%
 
 \newenvironment{Skills}
-  {\ResumeHeader{PROFESSIONAL SKILLS}
-    \begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-    \end{center}}
+  {\ResumeHeader{SKILLS}\begin{itemize}}
+  {\end{itemize}\sectionSpace}
 
 \newcommand{\SkillSection}[2]{
-  \item {\bfseries #1:}
-  \begin{itemize} {#2} \end{itemize}
+  \item {\bfseries #1:}{ #2}
 }
 
-\newcommand{\Skill}[1]{
-  \item {\bfseries #1}. 
-}
-
-\newenvironment{HobbyItems}
-  {\begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-   \end{center}}
-
-\newenvironment{MembershipItems}
-  {\begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-   \end{center}}
-
-\newenvironment{TrainingItems}
-  {\begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-   \end{center}}
-
+\newcommand{\Achievement}[1]{\item #1}
 
 \newenvironment{WorkHistory}
-  {\vfillForced\begin{center}\begin{tabular}{lcr}}
-  {\end{tabular}\end{center}\vfillForced}
+  {\ResumeHeader{WORK EXPERIENCE}}
+  {\vspace{1em}}
 
 \newcommand{\CareerDetailItem}[4] {
-                        & \hspace*{\fill} &  \\
-  {\bfseries #1} - {#2} &                 & {\em #3} \\ \hline
-                        &                 &    \\
-  \multicolumn{3}{l}{\parbox{16cm}{
-    \begin{itemize}
+  {\bfseries #1} - {#2} \hfillForced {\em (#3)}\vspace*{0.25em}\hline\vspace*{0.25em}
+   \begin{itemize}
       {#4}
     \end{itemize}
-  }} \\
+    \vspace*{0.5em}
+    \filbreak
 }
 
 \newenvironment{EducationSummary}
- {\ResumeHeader{EDUCATION}
-   \begin{center}
-      \begin{scshape}
-      \begin{tabular}{ccc}}
- {    \end{tabular}
-     \end{scshape}
-   \end{center}}
+ {\ResumeHeader{EDUCATION}\begin{scshape}\begin{itemize}}
+ {\end{itemize}\end{scshape}\sectionSpace}
 
 \newcommand{\EducationItem}[3] {
-  #1 & \hspace*{2em} & {\bfseries #2}  \\
-     &               & {#3} \\[4mm] 
+  \item {\bfseries #1} \hfillForced {#2} (#3)
 }
 
-\newenvironment{Publications}
-  {\hypertarget{Publications}{\ResumeHeader{PUBLICATIONS}}
-    \begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-   \end{center}}
+\newenvironment{Links}
+  {\ResumeHeader{LINKS}\begin{itemize}}
+  {\end{itemize}\sectionSpace}
 
-\newcommand{\Publication}[1] {
-  \item #1
-}
-
-\newenvironment{Patents}
-  {\hypertarget{Patents}{\ResumeHeader{PATENTS}}
-    \begin{center}
-    \begin{itemize}}
-  { \end{itemize}
-   \end{center}}
-
-\newcommand{\Patent}[1] {
-  \item #1
-}
+\newcommand{\Link}[1]
+  {\item #1}
 
 \newenvironment{RefereeSection}
   {\begin{tabular}{l}}
@@ -269,15 +209,4 @@
 
 \newcommand{\RefereeEmail}[1]
   {{\bf Email: }\href{mailto:#1}{#1}\\}
-
-%-----------------------------------------------------------------------------%
-% Supply \ResumeHeader{<HeaderText>} command.                                 %
-%-----------------------------------------------------------------------------%
-
-\newcommand{\ResumeHeader}[1]{
-  \begin{center}
-    \begin{tabular}{c}
-      {\Large \headerfont{\bf #1}}  \\
-    \end{tabular}
-  \end{center}
 }
