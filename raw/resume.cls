@@ -22,31 +22,29 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
+
+\usepackage[T1]{fontenc}
+\usepackage{tgschola}
+
+\RequirePackage{xcolor}
+\definecolor{HyperLinks}{HTML}{5e0000}
+\RequirePackage[
+  colorlinks=true,urlcolor=HyperLinks,linkcolor=HyperLinks,
+  pdfpagemode=UseThumbs,pdfstartview=FitV,
+  pdfpagelayout=SinglePage
+]{hyperref}
 \LoadClass[11pt,a4paper]{article}
 \RequirePackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=2.0cm,nohead]{geometry}
 \RequirePackage[pdftex]{graphicx}
-\RequirePackage{url,supertabular,epsfig,rotating,pslatex}
 \RequirePackage{lastpage}
-\RequirePackage[colorlinks=true,pdfpagemode=UseThumbs,pdfstartview=FitV,pdfpagelayout=SinglePage,linkcolor=blue,citecolor=bl
-ue,urlcolor=blue]{hyperref}
-\RequirePackage{titlesec}
 \RequirePackage{tabto}
-\RequirePackage{xcolor}
-\RequirePackage{framed}
 \RequirePackage[skip=0.25em plus1pt, indent=0pt]{parskip}
 
-\definecolor{shadecolor}{RGB}{200,200,200}
-
-\usepackage[OT1]{fontenc}
-\usepackage{pacioli}
-\newcommand*\headerfont{\cpcfamily}
-
-\usepackage[T1]{fontenc}
-\usepackage{gfsdidot}
+\RequirePackage{qrcode}
+\RequirePackage[firstpage=true]{background}
 
 \hyphenpenalty=9999
-
-\newcommand{\sectionSpace}{\vspace{0.5em}}
+\TabPositions{9em}
 
 %-----------------------------------------------------------------------------%
 % Make titlepage environment use current pagestyle.                           %
@@ -82,11 +80,12 @@ ue,urlcolor=blue]{hyperref}
 \fi
 
 %------------------------------------------------------------------------------------%
-% Page Number formatting; eg - Curriculum Vitae    Lindsay Bradford      Page x of y %
+% Page Number formatting; eg - Resume            Lindsay Bradford        Page x of y %
 %------------------------------------------------------------------------------------%
 
 \newcommand{\DH@ResumeAuthor}{}            
 \newcommand{\DH@ResumeTitle}{}
+\newcommand{\DH@ResumeQRCodeLink}{}
 
 \newcommand{\ps@resume}{
   \renewcommand*{\@oddhead}{}
@@ -106,25 +105,45 @@ ue,urlcolor=blue]{hyperref}
 \newcommand{\hfillForced}{\hspace*{\fill}}
 \newcommand{\pagebreakForcedFill}{\vfillForced\pagebreak\vfillForced}
 
+\newcommand{\sectionSpace}{\vspace{0.5em}}
+
+\newcommand{\fullRule}{\noindent\rule{\textwidth}{2.5pt}}
+
 %-----------------------------------------------------------------------------%
 % Supply \ResumeSumary[<DocumentTitle>]{<PersonName>} command.                 %
 %   Leaving the optional parameter <DocumentTitle> out will                   %
-%   generate the title "Curriculum Vitae"                                     %
+%   generate the title "Resume"                                     %
 %-----------------------------------------------------------------------------%
 
-\newcommand{\ResumeSummary}[2][Resume]{
+
+
+\backgroundsetup{
+    position=current page.north east,
+    nodeanchor=north east,
+    opacity=1,
+    scale=1,
+    angle=0,
+    hshift=-3.75em,
+    vshift=-2.5em,
+    contents={\qrcode[height=6.75em]{\DH@ResumeQRCodeLink}}
+  }
+
+\newcommand{\ResumeSummary}[3][Resume]{
   \renewcommand{\DH@ResumeTitle}{#1}       % set \DH@ResumeTitle  to variable 1
   \renewcommand{\DH@ResumeAuthor}{#2}      % set \DH@ResumeAuthor to variable 2
+  \renewcommand{\DH@ResumeQRCodeLink}{#3}      % set \DH@ResumeAuthor to variable 2
+}
+
+\newcommand{\ResumeHeader}[1]{
+  \fullRule\vspace{0.66em}\break
+  {\Large{\bf #1}}\hfill\break
+  \fullRule\vspace{0.66em}
 }
 
 %-----------------------------------------------------------------------------%
 % The environment ContactDtails and command \ContactDetial                    %
 %   are to be used together                                                   %
 %-----------------------------------------------------------------------------%
-
-\newcommand{\fullRule}{\noindent\rule{\textwidth}{2.5pt}}
-
-\newcommand{\ResumeHeader}[1]{\fullRule\vspace{0.66em}\break{\Large{\bf #1}}\hfill\break\fullRule\vspace{0.66em}}
 
 \newenvironment{ContactDetails}
   {\begin{Large}
@@ -136,7 +155,8 @@ ue,urlcolor=blue]{hyperref}
 }
 
 \newenvironment{Summary}[1]
-  {\ResumeHeader{PROFESSIONAL SUMMARY}{#1}\begin{itemize}}
+  {\ResumeHeader{PROFESSIONAL SUMMARY}{#1}\sectionSpace
+  \begin{itemize}}
   {\end{itemize}\sectionSpace}
 
 %-----------------------------------------------------------------------------%
