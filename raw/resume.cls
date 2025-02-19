@@ -40,11 +40,12 @@
 \RequirePackage{tabto}
 \RequirePackage[skip=0.25em plus1pt, indent=0pt]{parskip}
 
+\RequirePackage{verbatim}
 \RequirePackage{qrcode}
 \RequirePackage[firstpage=true]{background}
 
 \hyphenpenalty=9999
-\TabPositions{9em}
+\TabPositions{8.5em}
 
 %-----------------------------------------------------------------------------%
 % Make titlepage environment use current pagestyle.                           %
@@ -115,17 +116,15 @@
 %   generate the title "Resume"                                     %
 %-----------------------------------------------------------------------------%
 
-
-
 \backgroundsetup{
     position=current page.north east,
     nodeanchor=north east,
     opacity=1,
     scale=1,
     angle=0,
-    hshift=-3.75em,
-    vshift=-2.5em,
-    contents={\qrcode[height=6.75em]{\DH@ResumeQRCodeLink}}
+    hshift=-3.85em,
+    vshift=-2.666em,
+    contents={\qrcode[height=6.85em]{\DH@ResumeQRCodeLink}}
   }
 
 \newcommand{\ResumeSummary}[3][Resume]{
