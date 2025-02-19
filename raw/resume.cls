@@ -124,7 +124,10 @@
     angle=0,
     hshift=-3.85em,
     vshift=-2.666em,
-    contents={\qrcode[height=6.85em]{\DH@ResumeQRCodeLink}}
+    color=HyperLinks,
+    contents={\qrcode[nolink,height=6.85em]
+{BEGIN:VCARD\?VERSION:3.0\?REV:2024-02-19\?UID:urn:uuid:f48764f5-aa66-4aa5-8e52-6bf8844b8903\?FN:Lindsay Bradford\?N:Bradford;Lindsay;William;Dr.\?ROLE:Senior Software Engineer\?TEL;TYPE=CELL,HOME:+61-423-989-511\?EMAIL:lindsay.w.bradford@gmail.com\?URL:https://www.linkedin.com/in/lindsaybradford/\?END:VCARD\?}
+    }
   }
 
 \newcommand{\ResumeSummary}[3][Resume]{
