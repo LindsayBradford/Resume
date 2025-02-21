@@ -65,7 +65,7 @@
     }
 \else
 \renewenvironment{titlepage}
-    {%
+    {%z
       \if@twocolumn
         \@restonecoltrue\onecolumn
       \else
@@ -92,7 +92,7 @@
   \renewcommand*{\@oddhead}{}
   \renewcommand*{\@evenhead}{}
   \renewcommand*{\@oddfoot}{%
-    {\em {\DH@ResumeTitle} \hspace*{\fill} {\DH@ResumeAuthor} \hspace*{\fill} Page \arabic{page} of \pageref{LastPage}}%
+    {\em {\DH@ResumeTitle} \hspace*{\fill} \href{\DH@ResumeNameLink}{\DH@ResumeAuthor} \hspace*{\fill} Page \arabic{page} of \pageref{LastPage}}%
   }
   \renewcommand*{\@evenfoot}{\@oddfoot}
 }
@@ -133,7 +133,7 @@
 \newcommand{\ResumeSummary}[3][Resume]{
   \renewcommand{\DH@ResumeTitle}{#1}       % set \DH@ResumeTitle  to variable 1
   \renewcommand{\DH@ResumeAuthor}{#2}      % set \DH@ResumeAuthor to variable 2
-  \renewcommand{\DH@ResumeQRCodeLink}{#3}      % set \DH@ResumeAuthor to variable 2
+  \renewcommand{\DH@ResumeNameLink}{#3}      % set \DH@ResumeAuthor to variable 2
 }
 
 \newcommand{\ResumeHeader}[1]{
@@ -149,7 +149,7 @@
 
 \newenvironment{ContactDetails}
   {\begin{Large}
-   \ContactDetail{Name}{\DH@ResumeAuthor}}
+   \ContactDetail{Name}{\href{\DH@ResumeNameLink}{\DH@ResumeAuthor}}}
   {\end{Large}}
 
 \newcommand{\ContactDetail}[2]{
