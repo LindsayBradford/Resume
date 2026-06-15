@@ -10,27 +10,60 @@
   \end{ContactDetails}
 
   \begin{Summary}{
-    I am a highly motivated {\bf Senior Software Engineer} with excellent communication skills and a wealth of software analysis, design, and construction experience. I have designed and built back-end servers, decision support systems, optimisation models and rich GUI desktop applications across diverse domains. 
-    I enjoy development challenges, and adapt quickly to new environments and technologies.} 
+    With a wealth of data and software analysis, design, and construction experience over my career, I'm seeking an {\bf Integration Engineer} role. I have designed and built back-end servers with {\bf RESTful} interfaces, decision support systems, optimisation models and rich GUI desktop applications with a heavy focus on the {\bf finance}, environmental, and research domains. Career highlights:
+    } 
     \Achievement{Developed a prototype Application Server allowing unrestricted software changes at runtime under
     extreme load, resulting in a PhD thesis, three peer-reviewed articles, national media coverage, and a patent.}
     \Achievement{Maintainer and primary author of the Golang library go-dfb, for reading and writing dBase/xBase 
     geospatial database files. This GitHub repository has been starred 99 times, with 49 forks and 8 contributors.}
-    \Achievement{Multiple peer-reviewed articles in Biological Conservation, Australasian Conference on Information Systems, and Springer-Verlag Heidelberg.}
+%    \Achievement{Multiple peer-reviewed articles in Biological Conservation, Australasian Conference on Information Systems, and Springer-Verlag Heidelberg.}
   \end{Summary}
+
+  \begin{Portfolio}
+    \Link{
+      \href{https://github.com/LindsayBradford/CREM}{CREM} (Golang, {\bf RESTful} API)
+    }
+    \Link{
+      \href{https://drive.google.com/drive/folders/1MB2eFuAj4a6mkJAGyIPyLNWeW6NTAKPX?usp=drive_link}{Architecture and Design Portfolio} (UML, Written Communication/Presentations)
+    }
+    \Link{
+      \href{https://lindsaybradford.github.io/PersonalFinancier/}{PersonalFinancier} (Java, Finance)    
+    }
+    \Link{
+      \href{https://github.com/LindsayBradford/go-dbf}{go-dbf} (Golang, Geospatial),
+      \href{https://github.com/LindsayBradford/ReSyncSurvey}{ReSyncSurvey} (Python, Geospatial),
+      \href{https://github.com/LindsayBradford/MWRDTools}{MWRDTools} (C\#, Geospatial)
+    }
+ %   \Link{
+ %     \href{https://bradfordcoins.com.au/}{Bradford Coins Website} (Wordpress, HTML, CSS, Javascript),
+ %   }
+  \end{Portfolio}
+  
   \begin{Skills}
-    \SkillSection{Programming}{Golang, Java, C\#, VB.NET, Python}
-    \SkillSection{Technical}{Algorithm/Architecture Analysis \& Design, UML, Requirements Analysis}
-    \SkillSection{Tools \& Technologies}{GIT, SQL, ArcGIS, QGIS, Json, XML}
+    \SkillSection{Tools \& Technologies}{Postman, JSON, XML, SQL, GIT, Scrum, ArcGIS, QGIS, PowerQuery}
+    \SkillSection{Technical}{Solution Architecture, UML, Requirements Analysis,  Algorithm Analysis \& Design}
+    \SkillSection{Programming}{Golang, Java, Python, C\#, VB.NET}
   \end{Skills}
   \begin{WorkHistory}
+    \CareerDetailItem{Integration Support Engineer}{Australian Retirement Trust}{Apr 2025 -- May 2026}{
+        \item Supplied technical detail for clients implementing to the Beam product {\bf RESTful} API interface. Guided 6 clients
+        through Beam's User Acceptance Testing process for superannuation payments.
+        \item Took ownership of the \href{https://precisionadmin-beamconnect.apigee.io/}{BEAM Dev Portal}, re-writing 15 technical articles and creating 4 more. Introduced {\bf BPML}, {\bf UML} Sequence and state transition diagrams to aid in knowledge transfer.
+        \item Implemented a \href{https://precisionadmin-beamconnect.apigee.io/super-payments/postman-mock-server}{{\bf Postman} Mock Server} for the BEAM Super Payments API, covering 10 key API endpoints,  
+        38 distinct response types using dynamic content, and 20 key production readiness scenarios. Received several client compliments on the mock server as they tested with it.
+        \item Worked closely with {\bf governance} and growth teams to ensure {\bf compliance} with various Superannuations standards 
+        and ART procedures, and to supply API detail to potential clients.
+        \item Managed client API credentials for the testing environments via {\bf Azure} Directory Services.
+    }
+  
     \CareerDetailItem{Senior Software Engineer}{Truii}{Feb 2022 -- Nov 2024}{
       \item Developed and modified {\bf Survey123} templates for Seqwater field surveys over three consecutive contracts. Well received by stakeholders and field surveyors.
-      \item Implemented open-source {\bf Python} ArcGIS Pro plugin for ETL data migration from ArcGIS Online to enterprise geodatabases as part of last contract.
-      \item Created a suite of {\bf Python}, ArcGIS and QGIS plugins for automated geospatial data handling, reducing data processing effort from days to minutes.
+      \item Designed and implemented open-source {\bf Python} ArcGIS Pro plugin for ETL data migration from ArcGIS Online to enterprise geodatabases as part of last contract.
+      \item Designed and implemented a suite of {\bf Python}, ArcGIS and QGIS plugins for automated geospatial data handling, reducing data processing effort from days to minutes.
+      \item Several internal ETL projects relying on {\bf PowerQuery} within both {\bf PowerBI} and {\bf Excel} for data transformation.
     }
     \CareerDetailItem{Senior Software Engineer}{Australian Rivers Institute}{Jun 2018 -- Dec 2021}{
-      \item Developed CREM, an optimization tool for river catchment analysis using {\bf GoLang}.
+      \item Designed and Developed CREM, an optimization tool for river catchment analysis using {\bf GoLang}.
       \begin{itemize}
         \item Collaborated with QUT Viser lab to build a 3D visualization tool for stakeholders.
         \item Involved building out a server mode for CREM with {\bf RESTful}/{\bf Json} interface. 
@@ -42,7 +75,7 @@
       \begin{itemize}
         \item Assisted in implementing PCI SAQ-A compliance. 
         \item Designed, then helped build, an Amex communications emulator.
-        \item Helped to optimise NoSQL {\bf Elasticsearch} performance, achieving a 10x production speed-up.
+        \item Helped to optimise NoSQL {\bf Elasticsearch} performance, achieving 10x production speed-up.
       \end{itemize}
     }
     \CareerDetailItem{Senior Software Engineer}{Australian Rivers Institute}{Sep 2010 -- Jan 2016}{
@@ -54,22 +87,22 @@
    }
     \CareerDetailItem{R\&D Systems Engineer}{Invensys Rail}{Mar 2008 -- Jun 2010}{
       \item Requirements analysis \& design for ERTMS 2 demonstrator and Singapore DTL CTC software.
-      \item Conducted training on failover/communications framework for international collaborators, and UML for team-members. Both were well received. 
+      \item INCOSE Design for ERTMS 2 train control software for Singapore DTL project. 
+      \item Conducted training on failover/communications framework for international collaborators, and UML for team-members. Both were well received.
     }
-    \CareerDetailItem{Various Roles}{Queensland University of Technology}{Aug 2002 -- Mar 2008}{
-      \item Developed a {\bf Java} Application Server proofing real-time adaptive programming for my PhD.
-      \begin{itemize}
-      \item Authored multiple peer-reviewed {\bf publications} and secured an EU {\bf patent}.
-      \item Featured in national media, including {\bf The Australian} and {\bf ABC Radio National}.
-      \end{itemize}
-      \item Original author of the {\bf Java} open-source workflow modeler YAWLEditor. 
-      \item {\bfseries Requirements Analyst} for the QUT Creative Industries Precinct.  
-      \item Modeled film and television processes using EPCs, resulting in peer-reviewed publications.
-    }
-    \CareerDetailItem{Various Roles}{GBST Holdings}{Dec 1995 -- May 2002}{
-      \item {\bf Systems Architect and System Architecture Team Leader:} Oversaw strategic software development and architectural direction using {\bf UML} and domain modelling.
-      \item {\bf Application Support and Trading Thematic Team Leader:}  Designed risk management tools, optimized batch processing, and reduced support tickets by 67\% in two weeks.
-    }
+%    \CareerDetailItem{Various Roles}{Queensland University of Technology}{Aug 2002 -- Mar 2008}{
+%      \item Developed a {\bf Java} Application Server proofing real-time adaptive programming for my PhD.
+%      \begin{itemize}
+%      \item Authored multiple peer-reviewed {\bf publications} and secured an EU {\bf patent}.
+%      \item Featured in national media, including {\bf The Australian} and {\bf ABC Radio National}.
+%      \end{itemize}
+%      \item Original author of the {\bf Java} open-source workflow modeler YAWLEditor. 
+%    }
+%    \CareerDetailItem{Various Roles}{GBST Holdings}{Dec 1995 -- May 2002}{
+%      \item {\bf Systems Architect and System Architecture Team Leader:} Oversaw strategic software development and architectural
+% direction using {\bf UML} and domain modelling.
+%      \item {\bf Application Support and Trading Thematic Team Leader:}  Designed risk management tools, optimized batch processing, and reduced support tickets by 67\% in two weeks.
+ %   }  
   \end{WorkHistory}
 
   \begin{EducationSummary}
@@ -78,17 +111,7 @@
     \EducationItem{Bachelor of Information Technology}{University of Queensland}{1991--1993}
   \end{EducationSummary}  
 
-  \begin{Links}
-    \Link{
-      \href{https://github.com/LindsayBradford/go-dbf}{go-dbf} (Golang),
-      \href{https://github.com/LindsayBradford/CREM}{CREM} (Golang)
-    }
-    \Link{
-      \href{https://lindsaybradford.github.io/PersonalFinancier/}{PersonalFinancier} (Java),
-      \href{https://github.com/LindsayBradford/ReSyncSurvey}{ReSyncSurvey} (Python),
-      \href{https://github.com/LindsayBradford/ReSyncSurvey}{MWRDTools} (C\#)
-    }
-  \end{Links}
+
 
   \vfillForced
 
