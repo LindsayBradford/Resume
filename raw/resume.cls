@@ -197,8 +197,8 @@
   \item {\bfseries #1} \hfillForced {#2} (#3)
 }
 
-\newenvironment{Links}
-  {\ResumeHeader{LINKS}\begin{itemize}}
+\newenvironment{Portfolio}
+  {\ResumeHeader{Portfolio}\begin{itemize}}
   {\end{itemize}\sectionSpace}
 
 \newcommand{\Link}[1]
@@ -231,4 +231,3 @@
 
 \newcommand{\RefereeEmail}[1]
   {{\bf Email: }\href{mailto:#1}{#1}\\}
-}
